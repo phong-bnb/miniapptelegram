@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TonWeb from "tonweb";
 import nacl from "tweetnacl"; // Sử dụng tweetnacl để tạo keypair
 
