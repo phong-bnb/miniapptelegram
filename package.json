@@ -1,9 +1,12 @@
 {
+  "homepage": "https://github.com/phong-bnb/miniapptelegram",
   "name": "miniapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -11,7 +14,10 @@
   },
   "dependencies": {
     "@thirdweb-dev/sdk": "^4.0.99",
+    "@ton/core": "^0.58.1",
     "@tonconnect/sdk": "^3.0.5",
+    "@tonconnect/ui-react": "^2.0.9",
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
