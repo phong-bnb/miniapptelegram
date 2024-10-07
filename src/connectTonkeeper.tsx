@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TonWeb from "tonweb";
 import nacl from "tweetnacl"; // Sử dụng tweetnacl để tạo keypair
 
+
 const WalletComponent = () => {
   const [walletAddress, setWalletAddress] = useState<string>("");
 

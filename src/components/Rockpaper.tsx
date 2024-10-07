@@ -52,7 +52,7 @@ export default function RockPaperScissors() {
   const contract = getContract({
     client: client,
     chain: baseSepolia,
-    address: "<YOUR_TOKEN_CONTRACT_ADDRESS>",
+    address: "2mv1JLwGQSHH9Dc8qLbpzhZTZZ7_FpKa3Mt3D524gYw2v9Bj",
   });
 
   const [result, setResult] = useState<GameResult | null>(null);
