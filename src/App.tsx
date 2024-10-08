@@ -1,15 +1,15 @@
 import { TonConnectUIProvider, TonConnectButton } from "@tonconnect/ui-react";
 import { useState, useEffect } from "react";
 import RockPaperScissors from "./components/Rockpaper";
-import { TonConnect } from "@tonconnect/sdk"; // Import TonConnect
+import { TonConnect } from "@tonconnect/sdk"; 
 
-const tonConnect = new TonConnect(); // Tạo instance TonConnect
+const tonConnect = new TonConnect(); 
 
 function WalletConnection() {
   const [wallet, setWallet] = useState<{ address: string } | null>(null);
 
   useEffect(() => {
-    const connectedWallet = tonConnect.wallet; // Truy cập trực tiếp vào wallet
+    const connectedWallet = tonConnect.wallet; 
     if (connectedWallet) {
       setWallet(connectedWallet.account);
     }

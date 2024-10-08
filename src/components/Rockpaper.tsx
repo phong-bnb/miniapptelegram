@@ -278,7 +278,7 @@ export default function RockPaperScissors() {
                   )}
                   {showModal && (
                     <div
-                      onClick={() => setShowModal(false)} // Sự kiện click ra ngoài để đóng modal
+                      onClick={() => setShowModal(false)} 
                       style={{
                         position: "fixed",
                         top: 0,
@@ -292,7 +292,7 @@ export default function RockPaperScissors() {
                       }}
                     >
                       <div
-                        onClick={(e) => e.stopPropagation()} // Ngăn modal đóng khi click bên trong nó
+                        onClick={(e) => e.stopPropagation()} 
                         style={{
                           background: "white",
                           padding: "2rem",
@@ -320,8 +320,8 @@ export default function RockPaperScissors() {
                           }
                           onTransactionConfirmed={() => {
                             alert("Prize claimed!");
-                            setShowModal(false); // Đóng modal sau khi transaction thành công
-                            setPrizeClaimed(true); // Cập nhật trạng thái đã claim
+                            setShowModal(false); 
+                            setPrizeClaimed(true); 
                           }}
                           style={{
                             padding: "0.5rem 1rem",
