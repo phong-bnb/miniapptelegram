@@ -210,11 +210,13 @@ export default function RockPaperScissors() {
                         fontSize: "3rem",
                       }}
                     >
-                      {choice === "Đấm"
-                        ? <FaHandRock />
-                        : choice === "Bao"
-                        ? "📄"
-                        : "✂️"}
+                      {choice === "Đấm" ? (
+                        <FaHandRock />
+                      ) : choice === "Bao" ? (
+                        "📄"
+                      ) : (
+                        "✂️"
+                      )}
                     </button>
                   ))}
                 </div>
@@ -276,6 +278,7 @@ export default function RockPaperScissors() {
                   )}
                   {showModal && (
                     <div
+                      onClick={() => setShowModal(false)} // Sự kiện click ra ngoài để đóng modal
                       style={{
                         position: "fixed",
                         top: 0,
@@ -289,6 +292,7 @@ export default function RockPaperScissors() {
                       }}
                     >
                       <div
+                        onClick={(e) => e.stopPropagation()} // Ngăn modal đóng khi click bên trong nó
                         style={{
                           background: "white",
                           padding: "2rem",
@@ -303,21 +307,21 @@ export default function RockPaperScissors() {
                           Claim 10 Tokens!
                         </h2>
                         <p style={{ marginBottom: "1rem" }}>
-                          Bạn đã có 10 token trong ví điện tử !
+                          Bạn đã có 10 token trong ví điện tử!
                         </p>
 
                         <TransactionButton
                           transaction={() =>
                             claimTo({
                               contract: contract,
-                              to: account.address,
+                              to: account?.address ?? "",
                               quantity: "10",
                             })
                           }
                           onTransactionConfirmed={() => {
                             alert("Prize claimed!");
-                            setShowModal(false);
-                            setPrizeClaimed(true);
+                            setShowModal(false); // Đóng modal sau khi transaction thành công
+                            setPrizeClaimed(true); // Cập nhật trạng thái đã claim
                           }}
                           style={{
                             padding: "0.5rem 1rem",
